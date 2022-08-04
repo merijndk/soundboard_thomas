@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Soundboard</h1>
+    </header>
+    <ul class="buttons">
+        <li onclick="play('meer_schijven')"><img id="meer_schijven" src="img/meer_schijven.png"/></li>
+        <li onclick="play('kak')"><img id="kak" src="img/kak.png"/></li>
+        <li onclick="play('godverdomme')"><img id="godverdomme" src="img/godverdomme.png"/></li>
+    </ul>
+</body>
+<script>
+    function play(audioname) {
+
+        var audio = new Audio('audio/'+audioname+'.mp3');
+        var duration = 0;
+        audio.addEventListener('loadedmetadata', function(){
+            document.getElementById(audioname).classList.add('playing')
+            duration = audio.duration;
+        })
+        audio.play();
+
+        audio.addEventListener('playing', function(){
+            document.getElementById(audioname).classList.add('playing')
+            console.log(duration)
+            document.querySelector(".playing").style.animationDuration = duration+"s";
+
+        })
+
+        audio.addEventListener('ended', function(){
+            document.getElementById(audioname).classList.remove('playing')
+        })
+
+
+    }
+</script>
+</html>
