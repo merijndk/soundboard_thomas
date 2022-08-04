@@ -74,11 +74,10 @@
 
         console.log(audioname);
         if(audioname === "yeah-buddy"){
-            console.log("vasjdghs")
             audioname = "yeah-buddy"+Math.ceil(Math.random() * 3);
         }
 
-        var audio = new Audio('files/'+audioname+ '.ogg');
+        var audio = new Audio('files/'+audioname+ '.mp3');
         audio.addEventListener('loadedmetadata', function(){
             document.getElementById(audioname).classList.add('playing')
         })
