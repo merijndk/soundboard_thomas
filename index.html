@@ -1,41 +1,95 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Soundboard</h1>
+        <h1>THOMAS SOUNDBOARD</h1>
     </header>
     <ul class="buttons">
-        <li onclick="play('meer_schijven')"><img id="meer_schijven" src="img/meer_schijven.png"/></li>
-        <li onclick="play('kak')"><img id="kak" src="img/kak.png"/></li>
-        <li onclick="play('godverdomme')"><img id="godverdomme" src="img/godverdomme.png"/></li>
+<!--        <li onclick="play('meer_schijven')"><img id="meer_schijven" src="img/meer_schijven.png"/></li>-->
+<!--        <li onclick="play('kak')"><img id="kak" src="img/kak.png"/></li>-->
+<!--        <li onclick="play('godverdomme')"><img id="godverdomme" src="img/godverdomme.png"/></li>-->
     </ul>
 </body>
 <script>
+
+    let fragments = [
+        {name: "oh, moet ik even aan de baas vragen", file: "baas"},
+        {name: "gast!!", file: "gast"},
+        {name: "giet it oan of giet it niet oan?", file: "giet-et-oan"},
+        {name: "allemaal gleufies", file: "gleufies"},
+        {name: "gleuven!", file: "gleuven"},
+        {name: "gvd!!", file: "godverdomme"},
+        {name: "gouddroog blijven", file: "gouddroog"},
+        {name: "hey har, lekker geroeid?", file: "har"},
+        {name: "ja, helemaal kledder", file: "helemaal-kledder"},
+        {name: "kak!!", file: "kak"},
+        {name: "kom op nou, Bas!!", file: "kom-op"},
+        {name: "daar kunnen we toch helemaal niks mee?!", file: "kunnen-we-niks-mee"},
+        {name: "die is lekker he?!!", file: "lekker-he"},
+        {name: "mannendingen", file: "mannendingen"},
+        {name: "meen je niet!", file: "meen-je-niet"},
+        {name: "die meen je?!", file: "meen-je"},
+        {name: "meer schijven!!", file: "meer-schijven"},
+        {name: "hey Merijn, we moeten die tent afbreken!!", file: "merijn-tent-afbreken"},
+        {name: "heb je hem nog nat gehad?!", file: "nat-gehad"},
+        {name: "hey Rosemarie!!", file: "rosemarie"},
+        {name: "sorry Claire!!", file: "sorry-claire"},
+        {name: "laten we heel de tent afbreken!!", file: "tent-afbreken"},
+        {name: "wat?!", file: "wat"},
+        {name: "yeah buddy!!", file: "yeah-buddy"},
+    ]
+
+    const buttons = document.querySelector('.buttons');
+
+    for(let i = 0; i < fragments.length; i++){
+        let li = document.createElement('li');
+        li.id = fragments[i].file;
+
+
+        let img = document.createElement('img');
+        img.src = 'files/'+fragments[i].file+ '.webp';
+        li.append(img)
+
+        let span = document.createElement('span');
+        span.innerText = fragments[i].name.toUpperCase();
+        span.classList.add('title')
+        li.append(span)
+
+
+
+        li.addEventListener('click', function(){
+            play(fragments[i].file);
+        })
+
+        buttons.append(li)
+
+    }
+
     function play(audioname) {
 
-        var audio = new Audio('audio/'+audioname+'.mp3');
-        var duration = 0;
+        console.log(audioname);
+        if(audioname === "yeah-buddy"){
+            console.log("vasjdghs")
+            audioname = "yeah-buddy"+Math.ceil(Math.random() * 3);
+        }
+
+        var audio = new Audio('files/'+audioname+ '.ogg');
         audio.addEventListener('loadedmetadata', function(){
             document.getElementById(audioname).classList.add('playing')
-            duration = audio.duration;
         })
         audio.play();
 
-        audio.addEventListener('playing', function(){
-            document.getElementById(audioname).classList.add('playing')
-            console.log(duration)
-            document.querySelector(".playing").style.animationDuration = duration+"s";
-
-        })
 
         audio.addEventListener('ended', function(){
             document.getElementById(audioname).classList.remove('playing')
         })
-
-
     }
+
+
 </script>
 </html>
