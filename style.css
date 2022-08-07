@@ -5,7 +5,6 @@ body{
 }
 
 header{
-    height: 100px;
     background: #3affff;
     font-size: 40px;
     font-family: 'Work Sans', sans-serif;
@@ -17,9 +16,12 @@ ul.buttons{
     display: grid;
     list-style: none;
     width: 100%;
+    max-width: 800px;
+    margin: auto;
     box-sizing: border-box;
     padding: 0 20px;
     grid-template-columns: [col] 50% [col] 50% ;
+
 }
 
 ul.buttons li{
@@ -51,5 +53,34 @@ ul.buttons li .title{
     width: 100%;
     display: block;
     text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    ul.buttons li img{
+         width: 100%;
+        height: auto;
+    }
+
+    ul.buttons li .title{
+        font-size: 20px;
+    }
+    ul.buttons li{
+        height: auto;
+    }
+
+    header{
+        background: #3affff;
+        font-size: 20px;
+        font-family: 'Work Sans', sans-serif;
+        text-align: center;
+        color: #000000;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    ul.buttons li .title {
+        font-size: 14px;
+    }
 }
 
