@@ -1,5 +1,6 @@
 [
 {name: "oh, moet ik even aan de baas vragen", file: "baas.ogg"},
+{name: "erica!", file: "erica.ogg"},
 {name: "gast!!", file: "gast.ogg"},
 {name: "giet it oan of giet it niet oan?", file: "giet-et-oan.ogg"},
 {name: "allemaal gleufies", file: "gleufies.ogg"},
@@ -8,6 +9,7 @@
 {name: "gouddroog blijven", file: "gouddroog.ogg"},
 {name: "hey har, lekker geroeid?", file: "har.ogg"},
 {name: "ja, helemaal kledder", file: "helemaal-kledder.ogg"},
+{name: "in nomine patris ...", file: "in-nomine-patris.ogg"},
 {name: "kak!!", file: "kak.ogg"},
 {name: "kom op nou, Bas!!", file: "kom-op.ogg"},
 {name: "daar kunnen we toch helemaal niks mee?!", file: "kunnen-we-niks-mee.ogg"},
@@ -18,6 +20,7 @@
 {name: "meer schijven!!", file: "meer-schijven.ogg"},
 {name: "hey Merijn, we moeten die tent afbreken!!", file: "merijn-tent-afbreken.ogg"},
 {name: "heb je hem nog nat gehad?!", file: "nat-gehad.ogg"},
+{name: "ik had ook gewoon niks anders verwacht" file: "niks-anders-verwacht.ogg"},
 {name: "hey Rosemarie!!", file: "rosemarie.ogg"},
 {name: "sorry Claire!!", file: "sorry-claire.ogg"},
 {name: "laten we heel de tent afbreken!!", file: "tent-afbreken.ogg"},
